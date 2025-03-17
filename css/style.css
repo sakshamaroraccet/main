@@ -19128,9 +19128,18 @@ disabled look for disabled choices in the results dropdown
   border: none;
 }
 
+
+
+.change-x{
+  height: 1500px;
+}
+
 @media (max-width: 768px) {
-  .pdf-container {
-      max-width: 90%;
-      height: 150vh;
+  .change-x {
+    height: 850px;
+  }
+
+  .change-y {
+    width: 90%;
   }
 }
