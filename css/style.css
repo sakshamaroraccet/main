@@ -19108,66 +19108,29 @@ disabled look for disabled choices in the results dropdown
   margin-right: 10px;
   margin-left: 10px;
 }
-/* CSS for responsive iframe */
-/* ========================= */
 
-/* outer wrapper: set max-width & max-height; max-height greater than padding-bottom % will be ineffective and height will = padding-bottom % of max-width */
-#Iframe-Master-CC-and-Rs {
-  max-width: 812px;
-  max-height: 100%; 
-  overflow: hidden;
-}
+/*88888ajsaodjsaiodjaodjas*/
 
-/* inner wrapper: make responsive */
-.responsive-wrapper {
-  position: relative;
-  height: 0;}
- 
-.responsive-wrapper iframe {
-  position: absolute;top: 0;
-  left: 0;width: 100%;height: 100%;margin: 0;
-  padding: 0;border: none;}
 
-/* padding-bottom = h/w as % -- sets aspect ratio */
-/* YouTube video aspect ratio */
-.responsive-wrapper-wxh-572x612 {
-  padding-bottom: 107%;
+.pdf-container {
+  margin-top: 100px;
+  width: 100%;
+  max-width: 800px;
+  height: 90vh;
+  margin: auto;
+  border: 1px solid #ccc;
+  margin-bottom: 100px;
 }
 
-/* general styles */
-/* ============== */
-.set-border {
-  border: 5px inset #ddd;
-}
-.set-box-shadow { 
-  -webkit-box-shadow: 4px 4px 14px #4f4f4f;
-  -moz-box-shadow: 4px 4px 14px #4f4f4f;
-  box-shadow: 4px 4px 14px #4f4f4f;
-}
-.set-padding {
-  padding: 10px;
-}
-.set-margin {
-  margin: 30px;
-}
-.center-block-horiz {
-  margin-left: auto !important;
-  margin-right: auto !important;
+.pdf-container iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
 }
 
 @media (max-width: 768px) {
-  .responsive-wrapper {
-    height: auto !important;
-    max-width: 100% !important; /* Decrease width */
-    margin: 0 auto; /* Center the iframe */
-  }
-
-  .responsive-wrapper-wxh-572x612 {
-    padding-bottom: 267.5% !important; /* Increase height */
-  }
-
-  .responsive-wrapper iframe {
-    height: 250% !important; /* Ensure iframe expands */
-    width: 100% !important; /* Adjust width */
+  .pdf-container {
+      max-width: 90%;
+      height: 150vh;
   }
 }
