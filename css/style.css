@@ -19156,7 +19156,18 @@ disabled look for disabled choices in the results dropdown
 }
 
 @media (max-width: 768px) {
+  .responsive-wrapper {
+    height: auto !important;
+    max-width: 100% !important; /* Decrease width */
+    margin: 0 auto; /* Center the iframe */
+  }
+
   .responsive-wrapper-wxh-572x612 {
-    padding-bottom: 267.5%; /* 2.5 times the original height */
+    padding-bottom: 267.5% !important; /* Increase height */
+  }
+
+  .responsive-wrapper iframe {
+    height: 250% !important; /* Ensure iframe expands */
+    width: 100% !important; /* Adjust width */
   }
 }
