@@ -19154,3 +19154,9 @@ disabled look for disabled choices in the results dropdown
   margin-left: auto !important;
   margin-right: auto !important;
 }
+
+@media (max-width: 768px) {
+  .responsive-wrapper-wxh-572x612 {
+    padding-bottom: 267.5%; /* 2.5 times the original height */
+  }
+}
