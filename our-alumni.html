@@ -336,13 +336,18 @@
                                 <div class="col-12">
                                     <h6>ALUMNI CONNECT MAGAZINE - JANUARY EDITION</h6>
                                     <!-- Bootstrap tabs -->
-                                    <div style="display: flex; justify-content: center; align-items: center; height: 100vh; width: 100%; ">
-                                    <iframe src="assets/Alumni Connect Magazine - 1st ed.pdf" 
-                                            width="100%" height="800" style="border: none;" allowFullScreen>
-                                    </iframe>
+                                    <div id="Iframe-Master-CC-and-Rs" class="set-margin set-padding set-border set-box-shadow center-block-horiz">
+                                        <div class="responsive-wrapper 
+                                           responsive-wrapper-wxh-572x612"
+                                           style="-webkit-overflow-scrolling: touch; overflow: auto;">
+                                          
+                                          <iframe src="assets/Alumni Connect Magazine - 1st ed.pdf"> 
+                                          </iframe>
+                                        </div>
+                                      </div>
                                 </div>
-                        
-                                </div>
+                            </div>
+                        </div>
                     </section>
 
                     <section class="section section-lg">
@@ -351,13 +356,18 @@
                                 <div class="col-12">
                                     <h6>ALUMNI CONNECT MAGAZINE - FEBRUARY EDITION</h6>
                                     <!-- Bootstrap tabs -->
-                                    <div style="display: flex; justify-content: center; align-items: center; height: 100vh; width: 100%; ">
-                                    <iframe src="assets/Copy of Alumni_20250204_014430_0000.pdf" 
-                                            width="100%" height="1000" style="border: none;" allowFullScreen>
-                                    </iframe>
+                                    <div id="Iframe-Master-CC-and-Rs" class="set-margin set-padding set-border set-box-shadow center-block-horiz">
+                                        <div class="responsive-wrapper 
+                                           responsive-wrapper-wxh-572x612"
+                                           style="-webkit-overflow-scrolling: touch; overflow: auto;">
+                                          
+                                          <iframe src="assets/Copy of Alumni_20250204_014430_0000.pdf"> 
+                                          </iframe>
+                                        </div>
+                                      </div>
                                 </div>
-                        
-                                </div>
+                            </div>
+                        </div>
                     </section>
                 </div>
         </section>
@@ -1243,6 +1253,40 @@
             }, 500);
         };
     });
+
+    const template = document.createElement('template');
+template.innerHTML = `
+  <iframe frameborder="0" 
+    width="1280" 
+    height="900">
+  </iframe>
+`
+
+class PdfViewer extends HTMLElement {
+  constructor() {
+    super()
+    const shadowRoot = this.attachShadow({mode: 'open'})
+    shadowRoot.appendChild(template.content.cloneNode(true))
+  }
+  get observedAttributes() {
+    return ['src']
+  }
+  connectedCallback() {
+    this.updateIframeSrc()
+  }
+  attributeChangedCallback(name) {
+    if (['src', 'viewerPath'].includes(name)) {
+      this.updateIframeSrc()
+    }
+  }
+  updateIframeSrc() {
+    this.shadowRoot.querySelector('iframe').setAttribute(
+      'src', 
+      `https://mozilla.github.io/pdf.js/web/viewer.html?file=${this.getAttribute('src') || ''}`
+    )
+  }
+}
+window.customElements.define('pdf-viewer', PdfViewer)
     </script>
     <!-- End Google Tag Manager -->
 </body>
